@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/au.com.cybersearch2.classy_data.feature_2.1.0.qualifier.jar" id="au.com.cybersearch2.classy_data.feature" version="2.1.0.qualifier">
+   <feature url="features/au.com.cybersearch2.classy_data.feature_2.1.1.qualifier.jar" id="au.com.cybersearch2.classy_data.feature" version="2.1.1.qualifier">
       <category name="classy_data"/>
    </feature>
    <category-def name="classy_data" label="classy_data"/>
