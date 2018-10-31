@@ -7,5 +7,9 @@
 <unit id="org.eclipse.pde.source.feature.group" version="3.13.4.v20180330-0640"/>
 <repository location="http://download.eclipse.org/eclipse/updates/4.7"/>
 </location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.apache.log4j" version="1.2.15.v201012070815"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20150124073747/repository/"/>
+</location>
 </locations>
 </target>

@@ -4,7 +4,7 @@
     <parent>
         <groupId>au.com.cybersearch2</groupId>
         <artifactId>classy_data.bundle</artifactId>
-        <version>2.1.0-SNAPSHOT</version>
+        <version>2.1.1-SNAPSHOT</version>
     </parent>
     <artifactId>au.com.cybersearch2.classy_data</artifactId>
     <packaging>eclipse-plugin</packaging>

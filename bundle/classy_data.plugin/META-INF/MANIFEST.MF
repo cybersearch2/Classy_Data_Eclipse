@@ -1,12 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Plugin
-Bundle-SymbolicName: au.com.cybersearch2.classy_data
-Bundle-Version: 2.1.0.qualifier
+Bundle-SymbolicName: au.com.cybersearch2.classy_data;singleton:=true
+Bundle-Version: 2.1.1.qualifier
 Bundle-Activator: classy_data.plugin.Activator
 Bundle-Vendor: Cybersearch2 Pty Ltd
 Require-Bundle: org.eclipse.ui,
-  org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.apache.log4j;bundle-version="1.2.15"
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  libs/commons-beanutils-1.9.3.jar,
