@@ -2,7 +2,7 @@
 <feature
       id="au.com.cybersearch2.classy_data.feature"
       label="Classy Data"
-      version="2.1.1.qualifier">
+      version="2.3.0.qualifier">
 
    <description url="http://www.example.com/description">
       Classy Data Lightweight JPA
