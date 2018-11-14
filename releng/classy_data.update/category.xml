@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/au.com.cybersearch2.classy_data.feature_2.1.1.qualifier.jar" id="au.com.cybersearch2.classy_data.feature" version="2.1.1.qualifier">
-      <category name="classy_data"/>
+   <feature id="au.com.cybersearch2.classy_data.feature"  version="0.0.0" patch="false">
+      <category name="Classy Data 2.1.1"/>
    </feature>
-   <category-def name="classy_data" label="classy_data"/>
-</site>
+   <feature id="au.com.cybersearch2.classy_data.feature.source" version="0.0.0">
+       <category name="Classy Data 2.1.1 SDK"/>
+   </feature>
+   <category-def name="Classy Data 2.1.1" label="Classy Data 2.1.1">
+          <description>
+           Classy Data 2.1.1
+       </description>
+   </category-def>
+   <category-def name="Classy Data 2.1.1 SDK" label="Classy Data 2.1.1 SDK">
+       <description>
+           Classy Data 2.1.1 SDK
+       </description>
+   </category-def></site>

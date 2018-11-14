@@ -9,6 +9,12 @@
     <artifactId>au.com.cybersearch2.classy_data</artifactId>
     <packaging>eclipse-plugin</packaging>
     <dependencies>
+         <dependency>
+          <groupId>au.com.cybersearch2</groupId>
+          <artifactId>classyjava</artifactId>
+          <version>2.3.0</version>
+          <classifier>sources</classifier>
+        </dependency>
         <dependency>
           <groupId>commons-beanutils</groupId>
           <artifactId>commons-beanutils</artifactId>
@@ -22,6 +28,7 @@
           <groupId>com.google.guava</groupId>
           <artifactId>guava</artifactId>
         </dependency>
+        <!--
         <dependency> 
           <groupId>org.hibernate.javax.persistence</groupId>
           <artifactId>hibernate-jpa-2.0-api</artifactId>
@@ -32,6 +39,7 @@
           <version>${h2.version}</version>
           <scope>provided</scope>
         </dependency>
+        -->
         <dependency>
           <groupId>javax.annotation</groupId>
           <artifactId>jsr250-api</artifactId>
@@ -48,31 +56,51 @@
           <groupId>com.googlecode</groupId>
           <artifactId>openbeans</artifactId>
         </dependency>
-        <dependency>
-          <groupId>com.j256.ormlite</groupId>
-          <artifactId>ormlite-core</artifactId>
-          <version>${ormlite.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>com.j256.ormlite</groupId>
-          <artifactId>ormlite-jdbc</artifactId>
-          <version>${ormlite.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.xerial</groupId>
-          <artifactId>sqlite-jdbc</artifactId>
-          <version>3.8.5-pre1</version>
-        </dependency>
     </dependencies>
     	
     <build>
 	<!-- plain surefire tests without tycho -->
 	<testSourceDirectory>${basedir}/test-src</testSourceDirectory>
     <plugins>
-      <plugin>
+	<plugin>
+		<groupId>org.eclipse.tycho</groupId>
+		<artifactId>tycho-source-plugin</artifactId>
+		<version>${tycho.version}</version>
+		<executions>
+			<execution>
+				<id>plugin-source</id>
+				<goals>
+					<goal>plugin-source</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+    <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
+            <id>unpack</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+  		        <artifactItem>
+                  <groupId>au.com.cybersearch2</groupId>
+                  <artifactId>classyjava</artifactId>
+                  <version>2.3.0</version>
+                  <classifier>sources</classifier>
+		        </artifactItem>
+               </artifactItems>
+              <outputDirectory>${project.basedir}/src</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>false</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+             <exclusionGroupIds></exclusionGroupIds>
+           </configuration>
+         </execution>
+         <execution>
             <id>copy</id>
             <phase>initialize</phase>
             <goals>
@@ -99,16 +127,6 @@
 		          <artifactId>guava</artifactId>
 		          <version>22.0</version>
 		        </artifactItem>
-		        <artifactItem> 
-		          <groupId>org.hibernate.javax.persistence</groupId>
-		          <artifactId>hibernate-jpa-2.0-api</artifactId>
-		          <version>1.0.1.Final</version>    
-		        </artifactItem>
-		        <artifactItem>
-		          <groupId>com.h2database</groupId>
-		          <artifactId>h2</artifactId>
-		          <version>${h2.version}</version>
-		        </artifactItem>
                 <artifactItem>
                   <groupId>javax.annotation</groupId>
                     <artifactId>jsr250-api</artifactId>
@@ -123,21 +141,6 @@
 		          <groupId>com.googlecode</groupId>
 		          <artifactId>openbeans</artifactId>
 		          <version>1.0</version>
-		        </artifactItem>
-		        <artifactItem>
-		          <groupId>com.j256.ormlite</groupId>
-		          <artifactId>ormlite-core</artifactId>
-		          <version>${ormlite.version}</version>
-		        </artifactItem>
-		        <artifactItem>
-		          <groupId>com.j256.ormlite</groupId>
-		          <artifactId>ormlite-jdbc</artifactId>
-		          <version>${ormlite.version}</version>
-		        </artifactItem>
-		        <artifactItem>
-		          <groupId>org.xerial</groupId>
-		          <artifactId>sqlite-jdbc</artifactId>
-		          <version>3.8.5-pre1</version>
 		        </artifactItem>
                </artifactItems>
               <outputDirectory>${project.basedir}/libs</outputDirectory>

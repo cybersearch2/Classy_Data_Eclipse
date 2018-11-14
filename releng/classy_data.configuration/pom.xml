@@ -30,6 +30,14 @@
         <name>bintray</name>
         <url>https://maven.repository.redhat.com/ga/</url>
     </repository>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>bintray-cybersearch2-maven</id>
+        <name>bintray</name>
+        <url>https://dl.bintray.com/cybersearch2/maven</url>
+    </repository>
  <!-- Repositories overlapping the target definition should be commented out
     <repository>
       <id>eclipse-release</id>
@@ -55,11 +63,6 @@
            <artifactId>jsr250-api</artifactId>
            <version>1.0</version>
         </dependency>    
-        <dependency> 
-          <groupId>org.hibernate.javax.persistence</groupId>
-          <artifactId>hibernate-jpa-2.0-api</artifactId>
-          <version>1.0.1.Final</version>    
-        </dependency>
         <dependency>
           <groupId>commons-beanutils</groupId>
           <artifactId>commons-beanutils</artifactId>
@@ -185,6 +188,16 @@
    </plugins>
    <pluginManagement>
         <plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-source-feature-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
            <plugin>
              <groupId>org.apache.maven.plugins</groupId>
              <artifactId>maven-compiler-plugin</artifactId>

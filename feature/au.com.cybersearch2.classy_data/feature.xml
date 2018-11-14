@@ -19,11 +19,23 @@
     (at your option) any later version. See http://www.gnu.org/licenses/
    </license>
 
+   <url>
+      <discovery label="ORMLite Eclipse v5.1.0" url="https://dl.bintray.com/cybersearch2/com.j256.ormlite.eclipse/ORMLite_Eclipse/v5.1.0/"/>
+   </url>
+
+   <includes
+         id="com.j256.ormlite.feature"
+         version="5.1.0.201811132150"
+         name="Ormlite 5.1"
+         search-location="self"/>
+
    <requires>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
-   </requires>
+      <import plugin="org.h2"/>
+      <import plugin="com.j256.ormlite.eclipse"/>
+    </requires>
 
    <plugin
          id="au.com.cybersearch2.classy_data"
